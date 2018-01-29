@@ -5,3 +5,6 @@
 /spring-tutorial-5/target
 /spring-tutorial-5/*.project
 /spring-tutorial-5/*.springBeans
+/spring-tutorial-6/.settings
+/spring-tutorial-6/*.project
+/spring-tutorial-6/*.classpath
