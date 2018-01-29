@@ -26,9 +26,17 @@ public class App {
 		 *There are several types of Bean containers. That means we can choose what variety of ApplicationContext
 		 * we use. One variety of Bean container that could have been used instead of ApplicationContext is called
 		 * Bean Factory, BeanFactory may be Parent class of ApplicationContext.
+		 * As long as file that contains beans is in the root, we don't have to give a full path for the file to
+		 * app context.
 		 * */
 		appContext = new FileSystemXmlApplicationContext("beans.xml");
 		
+		/*
+		 * now that beancontainer/ApplicationContext or just context has been instantiated and it has only one 
+		 * bean in it
+		 * we can get that bean by
+		 *  */
+		Person appContextPerson = (Person) appContext.getBean("person");
 		
 	}
 
