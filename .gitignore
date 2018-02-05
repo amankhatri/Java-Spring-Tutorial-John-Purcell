@@ -13,3 +13,7 @@ spring-tutorial-7/.project
 *.prefs
 *.class
 *.properties
+spring-tutorial-8/.classpath
+spring-tutorial-8/.project
+spring-tutorial-8/target/classes/com/caveofprogramming/section2/Lecture8/spring_tutorial_8/beanXML/beans.xml
+spring-tutorial-8/target/classes/META-INF/maven/com.caveofprogramming.section2.Lecture8/spring-tutorial-8/pom.xml
