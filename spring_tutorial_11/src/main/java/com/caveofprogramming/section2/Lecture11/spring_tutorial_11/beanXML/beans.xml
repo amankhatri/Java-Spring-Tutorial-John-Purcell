@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="person"
+		class="com.caveofprogramming.section2.Lecture11.spring_tutorial_11.Person"
+		scope="prototype" init-method="onCreate" destroy-method="onDestroy">
+	<constructor-arg value="777" type="int" index="0" name="id"></constructor-arg>
+	<constructor-arg value="Mary" type="String" index="1" name="name"></constructor-arg>
+	<property name="taxId" value="123"></property>
+	<property name="address" ref="addressBean"></property>
+	</bean>
+
+	<bean id="addressBean"
+		class="com.caveofprogramming.section2.Lecture11.spring_tutorial_11.Address"
+		scope="singleton" init-method="onCreate" destroy-method="onDestroy" >
+	<constructor-arg value="Street Name" type="String" index="0" name="street"></constructor-arg>
+	<constructor-arg value="35206" type="int" index="1" name="zip"></constructor-arg>
+	</bean>
+
+
+</beans>
