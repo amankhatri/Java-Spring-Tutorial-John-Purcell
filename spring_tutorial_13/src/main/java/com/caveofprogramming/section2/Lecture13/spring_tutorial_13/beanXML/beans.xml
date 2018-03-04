@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="person"
+		class="com.caveofprogramming.section2.Lecture13.spring_tutorial_13.Person"
+		scope="prototype" init-method="onCreate" destroy-method="onDestroy"
+		factory-method="getInstance">
+	<property name="taxId" value="123"></property>
+	<property name="address" ref="addressBean"></property>
+	</bean>
+	
+
+	<bean id="addressBean"
+		class="com.caveofprogramming.section2.Lecture13.spring_tutorial_13.Address">
+	<constructor-arg value="Factory Address Bean" type="String" index="0" name="street"></constructor-arg>
+	<constructor-arg value="35206" type="int" index="1" name="zip"></constructor-arg>
+	</bean>
+
+	<bean id="addressBean2"
+		class="com.caveofprogramming.section2.Lecture13.spring_tutorial_13.Address"
+		p:street="Street Address using p" p:zip="1234">
+	</bean>
+
+
+	<bean id="PersonFactory"
+		class="com.caveofprogramming.section2.Lecture13.spring_tutorial_13.PersonFactory">
+	</bean>
+</beans>
