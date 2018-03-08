@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="basket"
+		class="com.caveofprogramming.section2.lecture14.spring_tutorial_14.FruitBasket">
+	<constructor-arg value="List1"></constructor-arg>
+	<constructor-arg>
+	<list>
+		<value>Apple</value>
+		<value>Orange</value>
+		<value>Banana</value>
+		<value>Kiwi</value>
+	</list>
+	</constructor-arg>
+	</bean>
+	
+	
+	<bean id="basket2"
+		class="com.caveofprogramming.section2.lecture14.spring_tutorial_14.FruitBasket">
+	<constructor-arg value="List1"></constructor-arg>
+	<constructor-arg>
+	<list>
+		<value>Apple</value>
+		<value>Orange</value>
+		<value>Banana</value>
+		<value>Kiwi</value>
+		<value>Apple</value>
+	</list>
+	</constructor-arg>
+	</bean>
+	
+	
+	<bean id="basket3"
+		class="com.caveofprogramming.section2.lecture14.spring_tutorial_14.FruitBasket">
+	<constructor-arg value="List1"></constructor-arg>
+	<constructor-arg>
+	<set>
+		<value>Apple</value>
+		<value>Orange</value>
+		<value>Banana</value>
+		<value>Kiwi</value>
+		<value>Apple</value>
+		<value>Apple</value>
+	</set>
+	</constructor-arg>
+	</bean>
+
+
+</beans>
