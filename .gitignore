@@ -40,3 +40,5 @@ spring_tutorial_18/.classpath
 spring_tutorial_18/.project
 target
 /spring_tutorial_18/.settings
+*.project
+spring_tutorial_19/.classpath
