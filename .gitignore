@@ -44,3 +44,7 @@ target
 spring_tutorial_19/.classpath
 spring_tutorial_20/.classpath
 spring_tutorial_21/.classpath
+spring-tutorial-5/.classpath
+*/.classpath
+*.MF
+*/META-INF
