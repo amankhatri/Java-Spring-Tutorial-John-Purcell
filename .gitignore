@@ -8,6 +8,7 @@
 /spring-tutorial-6/.settings
 /spring-tutorial-6/*.project
 /spring-tutorial-6/*.classpath
+/spring-tutorial-6/target
 spring-tutorial-7/.classpath
 spring-tutorial-7/.project
 *.prefs
@@ -48,3 +49,5 @@ spring-tutorial-5/.classpath
 */.classpath
 *.MF
 */META-INF
+*.class
+*.MF
