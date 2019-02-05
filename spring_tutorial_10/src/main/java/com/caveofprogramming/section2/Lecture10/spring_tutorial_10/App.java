@@ -42,6 +42,8 @@ public class App
 		 * ref="addressBean"></property> </bean>
 		 */
 		
+		/*This means if i change the value of taxId appContextPerson and ask for another "person" bean from app context, 
+		 * it would return same person with 321 value, because there will only be one object floating around (singleton nature)*/
 		appContextPerson.setTaxId(321);
 		System.out.println("appContextPerson " + appContextPerson);		
 		Person appContextPerson2 = (Person) appContext.getBean("person");
@@ -56,6 +58,10 @@ public class App
 		/*
 		 * When a spring bean is scoped as a prototype, the Spring IoC container 
 		 * creates new bean instance every time when a request is made for that bean.
+		 * 
+		 * 
+		 * This means if I change the value of street for appContextAddress bean it doesn't effect the value of appContextAddress bean
+		 * when i ask for it again, and its only a prototype (Seperate objects)
 		 */
 		Address appContextAddress2 = (Address) appContext.getBean("addressBean");
 		System.out.println("appContextAddress2" + appContextAddress2.toString());
