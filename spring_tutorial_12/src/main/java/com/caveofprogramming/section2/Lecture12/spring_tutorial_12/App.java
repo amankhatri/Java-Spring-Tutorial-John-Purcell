@@ -24,7 +24,7 @@ public class App
     	 *  factory was made.
     	 *  
     	 *  In person Class we add a factory method called getInstance, static is method is important
-    	 *  name of doesn't matter. Static method is important because we always was the same instance
+    	 *  name of doesn't matter. Static method is important because we always want the same instance
     	 *  of an object from factory
     	 *   (public static Person getInstance())
     	 *  
