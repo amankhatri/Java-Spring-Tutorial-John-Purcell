@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byType">
+	<!-- We have default autowire set by type, however we have two types of FileWriters defined in beans.xml, which would confuse spring on which one 
+	to pass to the logger constructor 
+	one way you can deal with by
+	1a) Excluding beans from autowiring candidate example beanid=logwriter
+	1b) or by declaring autowire candidates like we did in lecture 21
+	1c) By setting primary candidate for autowiring, like for panda bean. Even if you make a bean primary, that doesn't mean spring won't consider other 
+	beans as candidates for autowiring. That means you can still use consoleWriter to be used as autowire if you do it by beanid or name or alias.-->
+
+	<bean id="logger"
+		class="com.caveofprogramming.section3.lecture22.spring_tutorial_22.Logger"> </bean>
+
+	<bean name="consoleWriter"
+		class="com.caveofprogramming.section3.lecture22.spring_tutorial_22.ConsoleWriter"> </bean>
+
+	<bean id="fileWriter"
+		class="com.caveofprogramming.section3.lecture22.spring_tutorial_22.FileWriter"> </bean>
+		
+	<bean id="logWriter"
+		class="com.caveofprogramming.section3.lecture22.spring_tutorial_22.FileWriter"
+		autowire-candidate="false"> </bean>
+
+
+
+	<bean name="panda"
+		class="com.caveofprogramming.section3.lecture22.spring_tutorial_22.ConsoleWriter"
+		primary="true"> </bean>
+</beans>
