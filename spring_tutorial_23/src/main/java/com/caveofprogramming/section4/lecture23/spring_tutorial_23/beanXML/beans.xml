@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- 
+	xmlns:xsi and everything that starts with xmlns:xsi are just name spaces, they are like package names that
+	define what you can refer to in this xml.
+	
+	 xsi:schemaLocation  are really actual urls. By default the xml parsers in try to retrieve  following schemas:
+	 xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	
+	using follwing urls
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+		 http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	2) To introduce annotations, we will include another namespace in the heading :
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	-->
+
+	<bean id="logger"
+		class="com.caveofprogramming.section4.lecture23.spring_tutorial_23.Logger"> </bean>
+
+	<bean name="consoleWriter"
+		class="com.caveofprogramming.section4.lecture23.spring_tutorial_23.ConsoleWriter"> </bean>
+
+	<bean id="fileWriter"
+		class="com.caveofprogramming.section4.lecture23.spring_tutorial_23.FileWriter"> </bean>
+
+    <!-- 
+    	3) go to context tab and add annotation-config by right clicking or type it by hand as following: 
+     -->
+	<context:annotation-config></context:annotation-config>
+	<!-- 
+	4)  Step 3 tells spring that you want to configure things using Annotations, 
+	that doesn't mean that we cannot configure things using regular xml, it can still be done.  
+	you can mix and match things
+	 -->
+</beans>
