@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- 2) There are several ways to set the properties for Robot class, the one we have 
+been looking at is as follows:  -->		
+	
+	<bean id="robot1"
+		class="com.caveofprogramming.section5.lecture32.spring_tutorial_32.Robot">
+	<property name="id" value="1234"></property>
+	<property name="speech" value="hello"></property>
+	</bean>
+	
+<!-- 3) However, we can use Spring Expression language to set up these values like so: 
+ -->
+	<bean id="robot2"
+		class="com.caveofprogramming.section5.lecture32.spring_tutorial_32.Robot">
+	<property name="id" value="#{77+55}"></property>
+	<property name="speech" value="#{'My name is' + 'Robot2'}"></property>
+	</bean>
+	
+<!-- 4) Although we can do something like what we did in step 3, that is not much useful. 
+SPEL can be used to access property of or method of another bean. 
+To demostrate the use of spell, we would set the speech in RObot class using the text 
+property of RandomText class.  -->	
+	
+	<bean id="robot3"
+		class="com.caveofprogramming.section5.lecture32.spring_tutorial_32.Robot">
+	<property name="id" value="#{77+55}"></property>
+	<property name="speech" value="#{randomText.getText()}"></property>
+	</bean>
+	
+<!-- 5) We can also access property of a bean by doing so :   -->	
+	<bean id="robot4"
+		class="com.caveofprogramming.section5.lecture32.spring_tutorial_32.Robot">
+	<property name="id" value="#{77+55}"></property>
+	<property name="speech" value="#{randomText.text}"></property>
+	</bean>
+	
+<!-- 6) we can change the id of robot depending on the length of the text being returned    -->	
+	<bean id="robot5"
+		class="com.caveofprogramming.section5.lecture32.spring_tutorial_32.Robot">
+	<property name="id" value="#{randomText.text.length()}"></property>
+	<property name="speech" value="#{randomText.getText()}"></property>
+	</bean>
+	
+	<!-- 7)  however text can be null so we have to put in a null check, we can do so: 
+	. operator will only access .length if randomText.text will not be null-->
+	<bean id="robot5"
+		class="com.caveofprogramming.section5.lecture32.spring_tutorial_32.Robot">
+	<property name="id" value="#{randomText.text?.length()}"></property>
+	<property name="speech" value="#{randomText.getText()}"></property>
+	</bean>
+	
+	
+	<bean id="randomText"
+		class="com.caveofprogramming.section5.lecture32.spring_tutorial_32.RandomText">
+	</bean>
+</beans>
