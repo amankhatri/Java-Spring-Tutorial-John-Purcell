@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- 3) Added property place holder by going into context tab and right clicking the beans.  -->
+	<context:property-placeholder
+		location="com/caveofprogramming/section6/lecture35/spring_tutorial_35/properties/jdbc.properties" />
+	<!--  4) add bean definition here and we can insert values from jdbc.properties like this:  -->
+	<bean id="robot"
+		class="com.caveofprogramming.section6.lecture35.spring_tutorial_35.Robot">
+	<property name="id" value="${user}"></property>
+	<property name="speech" value="${password}"></property>
+	
+	
+	
+	</bean>
+</beans>
